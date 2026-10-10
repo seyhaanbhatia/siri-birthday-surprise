@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160f24">
+<title>For Siri ♡</title>
+<style>
+:root{--bg:#160f24;--pink:#ff8fb1;--rose:#ffd3df;--cream:#fff6f0;--lav:#c8b6ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top,#382044 0,#160f24 48%,#0c0912 100%);color:var(--cream);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(900px,92vw);margin:auto}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 16px;position:relative;isolation:isolate}
+.glow{position:absolute;width:260px;height:260px;border-radius:50%;background:#ff6f9e22;filter:blur(35px);z-index:-1;animation:pulse 4s ease-in-out infinite}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--lav)}
+h1{font-size:clamp(3rem,12vw,6.6rem);line-height:.95;margin:18px 0;color:var(--rose);font-weight:normal;text-shadow:0 0 35px #ff8fb144}
+.sub{font:clamp(14px,3.5vw,18px)/1.8 Arial,sans-serif;color:#f6dfe9;max-width:570px;margin:20px auto 28px}
+.primary{border:0;border-radius:999px;padding:14px 23px;background:linear-gradient(120deg,#ff8fb1,#c8b6ff);color:#26142c;font:bold 14px Arial,sans-serif;box-shadow:0 8px 30px #ff8fb133;transition:transform .2s}
+.primary:hover{transform:translateY(-2px) scale(1.02)}
+.hint{font:11px Arial,sans-serif;color:#c6b7cc;margin-top:16px}
+section{padding:72px 0}
+.section-kicker{text-align:center;text-transform:uppercase;letter-spacing:.22em;font:11px Arial,sans-serif;color:var(--lav)}
+h2{text-align:center;font-size:clamp(2rem,7vw,3.5rem);font-weight:normal;color:var(--rose);margin:12px 0 18px}
+.intro{text-align:center;color:#e8d8e5;font:15px/1.8 Arial,sans-serif;max-width:650px;margin:0 auto 30px}
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.memory{min-height:170px;border:1px solid #ffffff1c;border-radius:20px;padding:20px 16px;background:linear-gradient(145deg,#ffffff0c,#ffffff04);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transition:transform .25s,border-color .25s}
+.memory:hover{transform:translateY(-4px);border-color:#ff8fb177}
+.memory .emoji{font-size:30px;margin-bottom:12px}
+.memory strong{font-size:18px;color:#ffe0e9;font-weight:normal}
+.memory span{font:12px/1.6 Arial,sans-serif;color:#cfc0d2;margin-top:8px}
+.letter-wrap{max-width:690px;margin:auto;padding:clamp(22px,5vw,42px);border-radius:24px;background:linear-gradient(145deg,#fffaf31a,#ffffff08);border:1px solid #ffd3df33;box-shadow:0 20px 70px #0002}
+.letter-top{font:11px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--lav);text-align:center}
+.letter{font-size:clamp(17px,4vw,21px);line-height:1.9;color:#fff0f4;white-space:pre-line;margin-top:22px}
+.signature{text-align:right;font-style:italic;color:var(--rose);font-size:20px;margin-top:22px}
+footer{text-align:center;padding:30px 15px 45px;color:#bbaabd;font:12px Arial,sans-serif}
+.heart{display:inline-block;color:var(--pink);animation:beat 1.3s infinite}
+.float{position:fixed;bottom:-30px;pointer-events:none;z-index:10;animation:rise linear forwards;opacity:.85}
+.confetti{position:fixed;top:-12px;width:8px;height:12px;z-index:20;pointer-events:none;animation:fall linear forwards}
+.hidden{display:none!important}
+#surprise{animation:fadeIn .9s ease both}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@keyframes pulse{50%{transform:scale(1.18);opacity:.65}}
+@keyframes beat{50%{transform:scale(1.25)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:620px){.memory-grid{grid-template-columns:1fr}.memory{min-height:135px}.memory .emoji{font-size:27px}section{padding:52px 0}.hero{min-height:92svh}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="eyebrow">a little something for someone special</div>
+    <h1>Happy Birthday,<br><em>Siri</em> <span class="heart">♡</span></h1>
+    <p class="sub">Today deserves a little extra magic—so I made this tiny corner of the internet just for you.</p>
+    <button class="primary" id="openBtn">Open your surprise ✨</button>
+    <div class="hint">P.S. Keep smiling, birthday girl.</div>
+  </div>
+</div>
+
+<main id="surprise" class="hidden">
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">little things that matter</div>
+      <h2>Some things I hope you never forget</h2>
+      <p class="intro">Not every special moment has to be big. Sometimes it's the little conversations, the random laughs, and the comfort of being yourself that make a person important.</p>
+      <div class="memory-grid">
+        <div class="memory"><div class="emoji">🌷</div><strong>Your smile</strong><span>I hope life gives you a thousand reasons to smile.</span></div>
+        <div class="memory"><div class="emoji">🫶🏻</div><strong>Your kind heart</strong><span>Never forget how much goodness you bring into the lives around you.</span></div>
+        <div class="memory"><div class="emoji">✨</div><strong>Your dreams</strong><span>I hope you get closer to every little and big dream you carry.</span></div>
+      </div>
+      <p class="intro" style="margin-top:24px">You can replace these cards with your own favourite memories before sharing the link.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-kicker">a note for you</div>
+      <h2>From my heart ♡</h2>
+      <div class="letter-wrap">
+        <div class="letter-top">To Siri, on her birthday</div>
+        <div class="letter">Happy Birthdayyy, Siri ❤️🫶🏻
+
+I genuinely wish that you always stay happy, that your wishes come true, and that life brings you all the beautiful things you deserve.
+
+You're genuinely a special person in my life, and I'm grateful that I got to know you and share so many little moments with you. Thank you for being yourself, for the conversations, the laughs, and the memories that mean more than you probably realise.
+
+I hope this new year of your life brings you peace, confidence, new adventures, and countless reasons to smile. Never doubt your worth, and never stop believing in yourself.
+
+No matter how busy life gets or how much things change, I'll always wish the best for you. Keep being your sweet, pagal self—and please keep smiling.
+
+You deserve a really beautiful year. Happy Birthday once again, Siri. ❤️🧿</div>
+        <div class="signature">Always wishing you the best ♡</div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap" style="text-align:center">
+      <h2 style="font-size:clamp(2rem,7vw,3rem)">One last wish…</h2>
+      <p class="intro">May this year be kinder, brighter, and full of moments that make you think, “I'm really happy.”</p>
+      <button class="primary" id="wishBtn">Send some birthday magic 🎉</button>
+      <p id="wishText" class="intro hidden" style="margin-top:22px;color:var(--rose)">A million wishes, a little extra luck, and so much happiness for you. <span class="heart">♡</span></p>
+    </div>
+  </section>
+</main>
+<footer>Made with <span class="heart">♥</span> and a little birthday magic.</footer>
+<script>
+const openBtn=document.getElementById('openBtn');
+const surprise=document.getElementById('surprise');
+openBtn.addEventListener('click',()=>{
+  surprise.classList.remove('hidden');
+  openBtn.textContent='Surprise opened ♡';
+  openBtn.disabled=true;
+  confettiBurst(90);
+  setTimeout(()=>surprise.scrollIntoView({behavior:'smooth'}),180);
+  setInterval(()=>floatHeart(),850);
+});
+document.getElementById('wishBtn').addEventListener('click',()=>{
+  document.getElementById('wishText').classList.remove('hidden');
+  confettiBurst(120);
+});
+function floatHeart(){
+  const e=document.createElement('div');e.className='float';e.textContent=['♡','♥','✨','🌸'][Math.floor(Math.random()*4)];
+  e.style.left=Math.random()*100+'vw';e.style.fontSize=(15+Math.random()*20)+'px';e.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(e);setTimeout(()=>e.remove(),10500);
+}
+function confettiBurst(n){
+  const colors=['#ff8fb1','#c8b6ff','#ffd166','#fff6f0','#ff6b9a'];
+  for(let i=0;i<n;i++){
+    const e=document.createElement('i');e.className='confetti';e.style.left=Math.random()*100+'vw';e.style.background=colors[Math.floor(Math.random()*colors.length)];
+    e.style.borderRadius=Math.random()>.5?'50%':'2px';e.style.animationDuration=(2+Math.random()*3)+'s';e.style.animationDelay=Math.random()*.8+'s';
+    document.body.appendChild(e);setTimeout(()=>e.remove(),6500);
+  }
+}
+</script>
+</body>
+</html>
